@@ -28,11 +28,11 @@
 
 ## About
 
-JScreenshot-OCR is a Java-based application designed to capture screenshots and perform Optical Character Recognition (OCR) on the captured images using the Tesseract OCR library. This tool is particularly useful for extracting text from images quickly and efficiently, making it an invaluable asset for tasks such as document digitization and information extraction from images.
+JScreenshot-OCR is a Java-based application designed to capture screenshots and perform Optical Character Recognition (OCR) on the captured images using the Tesseract OCR library. This tool is particularly useful for extracting text from images quickly and efficiently, making it an invaluable asset for tasks such as document digitalization and information extraction from images.
 
 ### Prerequisites
 
-* Java 17 or greater.
+* Java 11 or greater.
 * Internet connection (not always required).
 
 ### Installing
