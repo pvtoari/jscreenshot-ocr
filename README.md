@@ -21,7 +21,7 @@
   - [Prerequisites](#prerequisites)
   - [Installing](#installing)
 - [Usage](#usage)
-- [Built sing](#built-sing)
+- [Built Using](#built-using)
 - [Authors](#authors)
 - [Contributing](#contributing)
 - [License](#license)
@@ -75,7 +75,7 @@ The compiled project will appear as a JAR file named ``javascreenshotOCR-jar-wit
     - Access to "About", reporting issues via GitHub, etc..
     - (WIP) Configuration menu and multilanguage support.
 
-## Built sing
+## Built Using
 
 - **Tess4J:** The project uses the [Tess4J]() OCR library to perform text recognition on images.
 
