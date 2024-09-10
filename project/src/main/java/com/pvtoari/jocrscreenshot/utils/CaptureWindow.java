@@ -14,6 +14,7 @@ class CaptureWindow extends JFrame {
     private Point endPoint;
     public BufferedImage capturedImage;
     public boolean recentlyCaptured;
+    public boolean isCapturing;
 
     public CaptureWindow() {
         setUndecorated(true);
@@ -23,10 +24,11 @@ class CaptureWindow extends JFrame {
 
         capturedImage = captureScreen();
         recentlyCaptured = false;
+        isCapturing = false;
     }
 
     public void startCapturing() {
-        
+        isCapturing = true;
         setSize(Toolkit.getDefaultToolkit().getScreenSize());
         setOpacity(0.0f);  // Inicialmente, la ventana es completamente transparente
 
@@ -52,6 +54,7 @@ class CaptureWindow extends JFrame {
                 doFadeOut();
                 //debugImage(capturedImage);
                 recentlyCaptured = true;
+                isCapturing = false;
             }
         });
 

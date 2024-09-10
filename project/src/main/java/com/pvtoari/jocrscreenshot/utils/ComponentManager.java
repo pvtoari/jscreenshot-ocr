@@ -320,6 +320,7 @@ public class ComponentManager {
         instancePanel.add(instanceContentScroll);
         instancePanel.add(SEPARATOR); // separación
         instancePanel.add(instanceButton);
+        instancePanel.add(SEPARATOR); // separación
 
         // añadir panel a la ventana
         instanceFrame.add(instancePanel, BorderLayout.CENTER);
@@ -410,7 +411,38 @@ public class ComponentManager {
     }
 
     private void configurationGUI() {
-        // TODO
+        JFrame configFrame = new JFrame();
+        configFrame.setTitle("Configuration");
+        configFrame.setSize(500, 300);
+        configFrame.setIconImage(getResourceImage("/img/logo.png"));
+        configFrame.setLocationRelativeTo(null);
+        configFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        configFrame.setResizable(true);
+        configFrame.setLayout(new BorderLayout());
+
+        JTabbedPane configTabs = new ConfigTabs(tessManager);
+
+        configFrame.add(configTabs, BorderLayout.CENTER);
+
+        configFrame.setVisible(true);
+    }
+
+    private void firstTimeSetup() {
+        JFrame setupFrame = new JFrame();
+        setupFrame.setTitle("Setup");
+        setupFrame.setSize(400, 300);
+        setupFrame.setIconImage(getResourceImage("/img/logo.png"));
+        setupFrame.setLocationRelativeTo(null);
+        setupFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setupFrame.setResizable(false);
+        setupFrame.setLayout(new BorderLayout());
+
+        JPanel setupPanel = new JPanel();
+        setupPanel.setLayout(new BoxLayout(setupPanel, BoxLayout.Y_AXIS));
+
+        JLabel setupLabel = new JLabel("Thanks for using JScreenshot-OCR! Looks like it's your first time using it, let's get started. You can configure the application later on the configuration menu.");
+        JLabel setupLabel2 = new JLabel("JScreenshot-OCR will be installed at " + tessManager.getInstallationPath());
+        setupLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
     }
 
     private void setContentText(String text) {
@@ -431,6 +463,8 @@ public class ComponentManager {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+
+                // TODO feature: hide GUI when capturing
 
                 if(ssManager.recentlyCaptured) {
                     System.out.println("Captured image");
